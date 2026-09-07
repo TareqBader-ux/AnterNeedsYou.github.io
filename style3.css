@@ -1,0 +1,18 @@
+.kingsleep{
+    background-image: url("https://i.ibb.co/pvT9hKmG/20260903-235418.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 250px;
+    width: 250px;
+
+    margin: auto;
+}
+
+.allpg3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

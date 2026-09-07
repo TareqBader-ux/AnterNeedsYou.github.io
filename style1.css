@@ -1,0 +1,44 @@
+.kingscream{
+    font-size: 100px;
+    color: #00ff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.Anter1{
+    font-size: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.bg1 {
+    background-image: url("https://i.ibb.co/Y4qbvz8Y/20260904-131642.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+
+    height: 250px;
+    width: 250px;
+
+    margin: auto;
+}
+
+.btnsorry, .btnsorry a{
+    text-decoration: none;
+    background-color: black;
+    color: aqua;
+    font-size: 100px;
+    width: 100%;
+}
+
+.bg2{
+ background: url("https://images.pexels.com/photos/33827321/pexels-photo-33827321.jpeg");
+ background-repeat: no-repeat;
+ background-size: cover; 
+ height: 100%;
+ width: 100%;  
+}
