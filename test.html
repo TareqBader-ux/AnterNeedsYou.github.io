@@ -1,239 +1,324 @@
+
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
     <meta charset="UTF-8">
+
+    <!-- Makes the website fit properly on phones -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>test.acssese.HiccPuKgGjVIEHEIVgeuhhi13446</title>
-    
-    <script>
-        const secretPassword = "Gh1K99Y2015HiopLpNhMasE"; 
-        
-        let userInput = prompt("password.access");
-        
-        if (userInput !== secretPassword) {
-            alert("Err.access.denied");
-            window.location.href = "https://google.com"; 
+
+    <title>access.dev.page</title>
+
+    <style>
+
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            margin-top: 50px;
+            padding: 10px;
         }
-    </script>
 
-    <link rel="stylesheet" href="./test.css">
-</head>
-
-<body>
-<div class="allpgtest">
-
-    <h1></h1>
-
-    <button id="start">START</button>
-    <button id="stop">STOP</button>
-
-    <h2 id="timer">00:00:10</h2>
-
-<h1 id="code">code = :</h1>
-
-    <pre><code>
-        <pre><code>
-
-&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
-&lt;head&gt;
-    &lt;meta charset="UTF-8"&gt;
-    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
-    &lt;title&gt;test.acssese.HiccPuKgGjVIEHEIVgeuhhi13446&lt;/title&gt;
-    
-    &lt;script&gt;
-        const secretPassword = "Gh1K99Y2015HiopLpNhMasE"; 
-        
-        let userInput = prompt("password.access");
-        
-        if (userInput !== secretPassword) {
-            alert("Err.access.denied");
-            window.location.href = "https://google.com"; 
+        #errorTxt {
+            color: red;
+            font-weight: bold;
         }
-    &lt;/script&gt;
 
-    &lt;link rel="stylesheet" href="./test.css"&gt;
-&lt;/head&gt;
+        #devPanel {
+            display: none;
+        }
 
-&lt;body&gt;
-&lt;div class="allpgtest"&gt;
+        input {
+            padding: 12px;
+            font-size: 16px;
+            width: 80%;
+            max-width: 300px;
+        }
 
-    &lt;h1&gt;&lt;/h1&gt;
+        button {
+            padding: 12px 20px;
+            font-size: 16px;
+            margin: 8px;
+            cursor: pointer;
+        }
 
-    &lt;button id="start"&gt;START&lt;/button&gt;
-    &lt;button id="stop"&gt;STOP&lt;/button&gt;
+        #timer {
+            font-size: 30px;
+        }
 
-    &lt;h2 id="timer"&gt;00:00:10&lt;/h2&gt;
 
-    &lt;h1&gt;code = ""&lt;/h1&gt;
+        /* PHONE */
 
-    &lt;/div&gt;
+        @media (max-width: 600px) {
 
-    &lt;audio id="kitenmeyaw"&gt;
-        &lt;source 
-            src="https://wikimedia.org"
-            type="audio/ogg"&gt;
-    &lt;/audio&gt;
-
-    &lt;script&gt;
-        const start = document.getElementById("start");
-        const stop = document.getElementById("stop");
-        const timer = document.getElementById("timer");
-        const sound = document.getElementById("kitenmeyaw");
-
-        let timeLeft = 10;
-        let countdown;
-        let meowTimeouts = [];
-
-        start.addEventListener("click", function () {
-            clearInterval(countdown);
-            timeLeft = 10;
-            start.disabled = true;
-            stop.disabled = false;
-
-            countdown = setInterval(function () {
-                timeLeft--;
-                timer.textContent =
-                    "00:00:" +
-                    String(timeLeft).padStart(2, "0");
-
-                if (timeLeft &lt;= 0) {
-                    meowALOT();
-                    timeLeft = 10;
-                }
-            }, 1000);
-        });
-
-        stop.addEventListener("click", function () {
-            clearInterval(countdown);
-
-            meowTimeouts.forEach(function(timeout) {
-                clearTimeout(timeout);
-            });
-
-            meowTimeouts = [];
-            sound.pause();
-            sound.currentTime = 0;
-
-            timeLeft = 10;
-            timer.textContent = "00:00:10";
-            start.disabled = false;
-        });
-
-        function meowALOT() {
-            let meowCount = 0;
-
-            function nextMeow() {
-                if (meowCount &gt;= 10) {
-                    return;
-                }
-
-                sound.currentTime = 0;
-                sound.play().catch(function(error) {
-                    console.log("Meow error:", error);
-                });
-
-                meowCount++;
-                let timeout = setTimeout(nextMeow, 1000);
-                meowTimeouts.push(timeout);
+            body {
+                margin-top: 30px;
             }
 
-            nextMeow();
+            h1 {
+                font-size: 28px;
+            }
+
+            h2 {
+                font-size: 22px;
+            }
+
+            button {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+                max-width: 300px;
+            }
+
+            input {
+                width: 90%;
+            }
+
         }
-    &lt;/script&gt;
-&lt;/body&gt;
-&lt;/html&gt;"
+
+    </style>
+
+</head>
 
 
+<body>
 
 
+    <!-- PASSWORD PAGE -->
 
-code.css = .allpgtest{
-    margin-top: 100px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-}
-</code></pre>
+    <div id="passwordGate">
 
-    </pre></code>
+        <h2>password.access</h2>
+
+        <!-- TEXT means you can SEE the password -->
+        <input
+            type="text"
+            id="passwordInput"
+            placeholder="password"
+        >
+
+        <br>
+
+        <button id="submitPassword">
+            Enter
+        </button>
+
+        <p id="errorTxt"></p>
 
     </div>
 
+
+    <!-- DEVELOPER PANEL -->
+
+    <div id="devPanel">
+
+        <h1>Developer Panel</h1>
+
+        <button id="start">
+            START
+        </button>
+
+        <button id="stop">
+            STOP
+        </button>
+
+        <h2 id="timer">
+            00:00:10
+        </h2>
+
+
+        <input
+            type="text"
+            placeholder="name"
+            id="txtname"
+        >
+
+        <button
+            id="btnname"
+            onclick="printname()"
+        >
+            Put your name
+        </button>
+
+        <p id="nameResult"></p>
+
+    </div>
+
+
+    <!-- SOUND -->
+
     <audio id="kitenmeyaw">
-        <source 
-            src="https://wikimedia.org"
-            type="audio/ogg">
+
+        <source
+            src="Meow.ogg"
+            type="audio/ogg"
+        >
+
     </audio>
 
+
     <script>
-        const start = document.getElementById("start");
-        const stop = document.getElementById("stop");
-        const timer = document.getElementById("timer");
-        const sound = document.getElementById("kitenmeyaw");
 
-        let timeLeft = 10;
-        let countdown;
-        let meowTimeouts = [];
 
-        start.addEventListener("click", function () {
-            clearInterval(countdown);
-            timeLeft = 10;
-            start.disabled = true;
-            stop.disabled = false;
+        // Get things from HTML
 
-            countdown = setInterval(function () {
-                timeLeft--;
-                timer.textContent =
-                    "00:00:" +
-                    String(timeLeft).padStart(2, "0");
+        var passwordInput =
+            document.getElementById("passwordInput");
 
-                if (timeLeft <= 0) {
-                    meowALOT();
-                    timeLeft = 10;
-                }
-            }, 1000);
-        });
+        var submitPassword =
+            document.getElementById("submitPassword");
 
-        stop.addEventListener("click", function () {
-            clearInterval(countdown);
+        var errorTxt =
+            document.getElementById("errorTxt");
 
-            meowTimeouts.forEach(function(timeout) {
-                clearTimeout(timeout);
-            });
+        var passwordGate =
+            document.getElementById("passwordGate");
 
-            meowTimeouts = [];
-            sound.pause();
-            sound.currentTime = 0;
+        var devPanel =
+            document.getElementById("devPanel");
 
-            timeLeft = 10;
-            timer.textContent = "00:00:10";
-            start.disabled = false;
-        });
+        var startButton =
+            document.getElementById("start");
 
-        function meowALOT() {
-            let meowCount = 0;
+        var stopButton =
+            document.getElementById("stop");
 
-            function nextMeow() {
-                if (meowCount >= 10) {
-                    return;
-                }
+        var timerDisplay =
+            document.getElementById("timer");
 
-                sound.currentTime = 0;
-                sound.play().catch(function(error) {
-                    console.log("Meow error:", error);
-                });
+        var catSound =
+            document.getElementById("kitenmeyaw");
 
-                meowCount++;
-                let timeout = setTimeout(nextMeow, 1000);
-                meowTimeouts.push(timeout);
+
+        // Timer
+
+        var timeLeft = 10;
+
+        var countdownTimer;
+
+
+        // PASSWORD
+
+        submitPassword.onclick = function () {
+
+            var secretPassword =
+                "Gh1K99Y2015HiopLpNhMasE";
+
+
+            if (passwordInput.value == secretPassword) {
+
+                devPanel.style.display = "block";
+
+                passwordGate.style.display = "none";
+
             }
 
-            nextMeow();
+            else {
+
+                errorTxt.innerHTML =
+                    "Err.access.denied";
+
+                passwordInput.value = "";
+
+            }
+
+        };
+
+
+        // START BUTTON
+
+        startButton.onclick = function () {
+
+            timeLeft = 10;
+
+            timerDisplay.innerHTML =
+                "00:00:10";
+
+
+            countdownTimer = setInterval(function () {
+
+                timeLeft = timeLeft - 1;
+
+
+                if (timeLeft > 0) {
+
+                    if (timeLeft < 10) {
+
+                        timerDisplay.innerHTML =
+                            "00:00:0" + timeLeft;
+
+                    }
+
+                    else {
+
+                        timerDisplay.innerHTML =
+                            "00:00:" + timeLeft;
+
+                    }
+
+                }
+
+
+                if (timeLeft <= 0) {
+
+                    clearInterval(countdownTimer);
+
+                    timerDisplay.innerHTML =
+                        "00:00:00";
+
+                    catSound.play();
+
+                }
+
+            }, 1000);
+
+        };
+
+
+        // STOP BUTTON
+
+        stopButton.onclick = function () {
+
+            clearInterval(countdownTimer);
+
+            catSound.pause();
+
+            catSound.currentTime = 0;
+
+            timeLeft = 10;
+
+            timerDisplay.innerHTML =
+                "00:00:10";
+
+        };
+
+
+        // NAME BUTTON
+
+        function printname() {
+
+            let txtname =
+                document.getElementById("txtname");
+
+            let name =
+                txtname.value;
+
+
+            if (name == "") {
+
+                name = "Tester";
+
+            }
+
+
+            document.getElementById("nameResult").innerHTML =
+                "Hello, " + name + "!";
+
         }
+
     </script>
 
-    <h1>take this warning importantly: this a page where it is DEVELEPOR ONLY so dont abuse it!</h1>
 </body>
+
 </html>
