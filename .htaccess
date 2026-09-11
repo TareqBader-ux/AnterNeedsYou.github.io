@@ -1,0 +1,6 @@
+# block everyone except me
+<Files "test.html">
+    Order Deny,Allow
+    Deny from all
+    Allow from 127.0.0.1 ::1 2a01:9700:3d86:1700:2e22:62d1:1e6f:865a
+</Files>
